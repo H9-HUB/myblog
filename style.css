@@ -63,7 +63,7 @@ body {
 }
 
 .hero h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* 文章列表 */
@@ -291,4 +291,5 @@ footer {
 .hello i {
   font-size: 2rem;  
   color: #ffffff;    
+
 }
