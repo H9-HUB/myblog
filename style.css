@@ -1,0 +1,294 @@
+/* 引入字体 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lato:wght@400;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/source-han-sans@latest/SubsetOTF/SC/WOFF2/OTF/SourceHanSansSC-Regular.otf');
+
+/* 全局样式 */
+* {
+  margin: 0;    /*把浏览器自带格式清零*/
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '霞鹜文楷', 'Playfair Display', serif;
+}
+
+/*大背景板*/
+.page-wrapper{
+  max-width: 1400px;
+  margin:0 auto;
+  padding: 0 20px;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(45deg, #d9effe, #f3f0ff); 
+  color: #333;    /* 主体的文字 */
+}
+
+/* 导航栏 */
+.navbar {
+  background: linear-gradient(360deg, #4e92c0, #6e5fa4);  /*45°线性渐变 蓝紫混合*/
+  color: rgb(250, 250, 251);
+  padding: 1rem 2rem;  /*上下1rem，左右2rem内边距*/
+  display: flex;       /*块级元素 弹性盒模型*/
+  justify-content: space-between;  /*左右分布*/
+  align-items: center;   /*flex 元素的外边距框在交叉轴上居中对齐*/
+  margin-top: 2rem;
+  border-radius: 8px 8px 0px 0px;
+}
+
+/*右上角导航条*/
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* 欢迎区域 */
+.hero {
+  background: linear-gradient(180deg, #4991c2, #e2e1e1); 
+  color: white;
+  padding: 3rem 2rem;
+  height: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+/* 文章列表 */
+.articles {
+  padding: 5rem;
+}
+
+.article-card {
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 文章卡片「阅读更多」按钮 */
+.btn-read {
+  padding: 6px 18px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #007acc 0%, #005fa3 100%);
+  box-shadow: 0 2px 8px rgba(0, 122, 204, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-read:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.4);
+}
+
+.btn-read:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 122, 204, 0.3);
+}
+
+/* 页脚 */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(360deg, #4e92c0, #6e5fa4);  /*45°线性渐变 蓝紫混合*/
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+}
+
+/* 文章详情页样式 */
+.article-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.article-detail h1 {
+  margin-bottom: 1rem;
+}
+
+.article-detail a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #007acc;
+  text-decoration: none;
+}
+
+/* 关于我和联系方式页面统一样式 */
+.about, .contact {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about ul, .contact ul {
+  margin-left: 1.5rem;
+}
+
+/* 换头像按钮 */
+.btn-avatar {
+  padding: 8px 22px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #007acc 0%, #005fa3 100%);
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 1rem auto;
+}
+
+.btn-avatar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 122, 204, 0.4);
+}
+
+.btn-avatar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 122, 204, 0.3);
+}
+
+/* 头像统一样式 */
+.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007acc;
+  display: block;
+  margin: 0 auto 1rem auto; /* 居中+下方留空 */
+}
+
+/* 评论区 */
+.comments {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comments h3 {
+  margin-bottom: 1rem;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+#nickname,
+#commentText {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+#commentText {
+  min-height: 80px;
+  resize: vertical;
+}
+
+#commentList {
+  list-style: none;
+  padding: 0;
+}
+
+#commentList li {
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+#commentList li:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.comment-body {
+  white-space: pre-wrap; /* 保留换行 */
+  line-height: 1.6;
+}
+
+.article-date {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+#article-content p {
+  text-indent: 2em;   /* 中文段首两格 */
+}
+
+/* 导航栏：文字+图标 */
+.brand {
+  display: flex;
+  align-items: center;   /* 垂直居中 */
+  gap: 0.5rem;          /* 文字与图标间距 */
+}
+/* 图标大小 */
+.brand i {
+  font-size: 1.8rem;   
+  color: #ffffff;     
+}
+
+/* 欢迎行：文字+图标 */
+.hello {
+  display: flex;
+  align-items: center;   /* 垂直居中 */
+  gap: 0.5rem;          /* 文字与图标间距 */
+}
+/* 图标大小 */
+.hello i {
+  font-size: 2rem;  
+  color: #ffffff;    
+}

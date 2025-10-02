@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>文章详情</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Markdown 解析 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <!-- 文字 + 图标 包在一起 -->
+    <div class="brand">
+      <h1>H9的博客</h1>
+      <i class="fa-solid fa-hands-asl-interpreting"></i>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="contact.html">联系方式</a></li>
+    </ul>
+  </nav>
+
+  <section class="article-detail">
+    <h1 id="article-title">文章标题</h1>
+    <p id="article-content">文章内容加载中...</p>
+    <a href="index.html">← 返回首页</a>
+  </section>
+
+  <!-- 评论区 -->
+  <section class="comments">
+    <h3>评论区</h3>
+
+    <!-- 发表 -->
+    <form id="commentForm" onsubmit="return addComment()">
+      <input type="text" id="nickname" placeholder="昵称" required />
+      <textarea id="commentText" placeholder="说点什么..." required></textarea>
+      <button type="submit" class="btn-read">发 表 评 论</button>
+    </form>
+
+    <!-- 列表 -->
+    <ul id="commentList"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 H9的个人博客. All rights reserved.</p>
+  </footer>
+
+  <script src="article.js"></script>
+</body>
+</html>

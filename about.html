@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>关于我</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page-wrapper">
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <!-- 文字 + 图标 包在一起 -->
+    <div class="brand">
+      <h1>H9的博客</h1>
+      <i class="fa-solid fa-hands-asl-interpreting"></i>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="contact.html">联系方式</a></li>
+    </ul>
+  </nav>
+
+  <section class="about">
+    <h2>关于我</h2>
+    <!-- 头像 -->
+      <img id="avatar" src="avatar.jpg" alt="头像" class="avatar-img" />
+
+    <!-- 换头像按钮 -->
+    <div style="text-align: center;">
+      <button class="btn-avatar" onclick="changeAvatar()">换头像</button>
+    </div>
+    
+    <!-- 隐藏的文件输入框 -->
+    <input type="file" id="avatarInput" accept="image/*" style="display: none;" onchange="previewAvatar(event)" />
+      <p>你好，欢迎来到我的博客，这里有我学习和生活的点点滴滴。</p>
+    <h3>爱好</h3>
+    <ul>
+      <li>热爱运动的懒虫一枚</li>
+      <!-- <li>React（学习中）</li> -->
+      <li>乒乓球 篮球 羽毛球...</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 H9的个人博客. All rights reserved.</p>
+  </footer>
+  </div>
+</body>
+</html>
+
+<script>
+  // 点击按钮触发文件选择
+  function changeAvatar() {
+    document.getElementById('avatarInput').click();
+  }
+
+  // 读取本地图片并预览
+  function previewAvatar(event) {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById('avatar').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('请选择一张图片！');
+    }
+  }
+</script>
